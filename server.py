@@ -19,8 +19,7 @@ app.add_middleware(
 
 # Read your VirusTotal API key from environment variable
 VT_API_KEY = os.environ.get("5ca6f006544e46c5dd85b10def7d5fc0bb5dd0c91e02e01b43c77894dc0ad6e7")
-if not VT_API_KEY:
-    raise ValueError("Please set the VT_API_KEY environment variable!")
+
 
 HEADERS = {"x-apikey": VT_API_KEY}
 
