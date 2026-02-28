@@ -1,11 +1,11 @@
 import requests
 
-# Default server URL (local server)
+
 SERVER_URL = "http://127.0.0.1:8000"
 
 
 def scan_file(file_path, server_url=SERVER_URL):
-    """Send a file to the server for scanning"""
+
     try:
         with open(file_path, "rb") as f:
             response = requests.post(
@@ -24,7 +24,7 @@ def scan_file(file_path, server_url=SERVER_URL):
 
 
 def scan_url(url, server_url=SERVER_URL):
-    """Send a URL to the server for scanning"""
+
     try:
         response = requests.post(
             f"{server_url}/scan-url",
@@ -37,7 +37,7 @@ def scan_url(url, server_url=SERVER_URL):
         print(f"✅ URL scanned successfully: {url}")
         data = response.json()
 
-        # Check if the server returned proper scan data
+  
         if "data" not in data or "attributes" not in data["data"]:
             print("⚠️ Warning: Scan result format unexpected.")
             print(data)
